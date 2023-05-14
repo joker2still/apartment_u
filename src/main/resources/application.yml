@@ -1,0 +1,31 @@
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/bedroom?characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+        username: root
+        password: "010514"
+    data:
+        mongodb:
+            uri: mongodb://ocradmin:654321@localhost:27017/bedroom	
+    application:
+        name: spring-boot-mongodb
+    mvc:
+        favicon:
+            location: classpath:/static/favicon.ico
+
+        
+mybatis:
+    typeAliasesPackage: 
+        com.bedroom.common.pojo
+    mapperLocations: 
+        mappers/*.xml
+    configuration:
+       map-underscore-to-camel-case: true
+
+logging:
+    level: 
+        cn.tedu.mapper: debug
+
+server:
+    port: 8070

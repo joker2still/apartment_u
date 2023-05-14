@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>寝室交换申请</title>
+<link th:href="@{/css/mycss/supportFind.css}" href="../static/css/mycss/supportFind.css" rel="stylesheet" type="text/css"/>
+<script th:inline="javascript">
+	var userPermission = [[${session.user}]];//以thymeleaf的形式从session中取出值
+	/* if(userPermission == null){
+		var path = window.location.href;
+		window.location.href=path.split(",")[0]+"/"+path.split(",")[1];
+	} */
+</script>
+</head>
+<body>
+	<div class="apply_submit_div" id="apply_submit_div">
+		<div id="apply_submit_div_title">学生晚归申请</div>
+		<div class="info">
+			<label for="stu_name">学生姓名</label>
+			<input type="text" name="stu_name" value="testTest" disabled="disabled"/>
+		</div>
+		<div class="info">
+			<label for="stu_account">学生学号</label>
+			<input name="stu_account" value="testAccount" disabled="disabled"/>
+		</div>
+		<div class="info">
+			<label for="building_code">学生寝室</label>
+			<select name="building_code" disabled="disabled">
+				<option value="1">西一</option>
+				<option value="2">西二</option>
+				<option value="2">西三</option>
+				<option value="3">西四</option>
+			</select>栋
+			<select name="unit" disabled="disabled">
+				<option value="A">A</option>
+				<option value="B">B</option>
+			</select>单元
+			<select name="bedroom_code" disabled="disabled">
+				<option value="119">119</option>
+				<option value="120">120</option>
+				<option value="121">121</option>
+				<option value="122">122</option>
+			</select>号
+		</div>
+		<div class="info">
+			<label for="late_back_time">晚归时间</label>
+			<input name="late_back_time" type="datetime-local"/>
+		</div>
+		<div class="info">
+			<label for="apply_reason">申请原因</label><br/>
+			<textarea name="apply_reason" cols="30" rows="5" style="margin-left:5em;"></textarea>
+		</div>
+		<div class="info">
+			<input type="submit" value="提交申请" onclick="applyLateBack()"></input>
+		</div>
+	</div>
+	<div class="apply_div_table" id="apply_div_table">
+		<div id="apply_div_table_title">我的申请</div>
+		<table id="apply_div_table_tb">
+			<thead>
+				<tr>
+					<th>申请单号</th>
+					<th>申请账号</th>
+					<th>晚归时间</th>
+					<th>申请时间</th>
+					<th>审核时间</th>
+					<th>审核回复</th>
+					<th>审核状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<script src="../static/myjs/datetime-common.js" th:src="@{/myjs/datetime-common.js}"></script>
+	<script src="../static/js/jquery/jQuery-2.2.0.min.js" th:src="@{/js/jquery/jQuery-2.2.0.min.js}"></script>
+	<script th:src="@{/js/query/jquery.dataTables.min.js}" src="../static/js/query/jquery.dataTables.min.js"></script>
+	<script src="../static/myjs/evaluate.js" th:src="@{/myjs/evaluate.js}"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+<title></title>
+
+<link href="../static/css/all.css" rel="stylesheet" th:href="@{/css/all.css}" type="text/css">
+<link href="../static/js/bstable/css/bootstrap.min.css" th:href="@{/js/bstable/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link href="../static/js/bstable/css/bootstrap-table.css" th:href="@{/js/bstable/css/bootstrap-table.css}" rel="stylesheet" type="text/css">
+ <link th:href="@{/css/bootstrap/jquery.dataTables.min.css}" href="../static/css/bootstrap/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+ 
+</head>
+<body>
+
+<div class="book_con01">
+    <div  style="font-size:20px"  align="center">留校申请审批</div>
+		 <table id="approval-apply-stay"  width="100%"  class="book_table" border="1" cellpadding="10">
+			 <thead align="left">
+			 	<tr>
+			 		<th>申请人账号</th>
+			 		<th>开始时间</th>
+			 		<th>结束时间</th>
+			 		<th>申请原因</th>
+			 		<th>申请时间</th>
+			 		<th>操作</th>
+			 	</tr>
+			 </thead>
+		 	<tbody>
+		 	
+		 	</tbody>
+		</table>
+</div>	
+
+
+
+<div class="book_con01">
+    <div  style="font-size:20px"  align="center">审批结果信息</div>
+		 <table id="show-approval-result-stay"  width="100%"  class="book_table" border="1" cellpadding="10">
+			 <thead align="left">
+			 	<tr>
+			 		<th>申请人账号</th>
+			 		<th>开始时间</th>
+			 		<th>结束时间</th>
+			 		<th>申请原因</th>
+			 		<th>申请时间</th>
+			 		<th>审批结果</th>
+			 		<th>审批时间</th>
+			 	</tr>
+			 </thead>
+		 	<tbody>
+		 	
+		 	</tbody>
+		</table>
+</div>	
+
+<script src="../static/js/jquery/jQuery-2.2.0.min.js" th:src="@{/js/jquery/jQuery-2.2.0.min.js}"></script>
+<script th:src="@{/js/query/jquery.dataTables.min.js}" src="../static/js/query/jquery.dataTables.min.js"></script>
+<script src="../static/js/bstable/js/bootstrap.min.js" th:src="@{/js/bstable/js/bootstrap.min.js}"></script>
+<script src="../static/js/bstable/js/bootstrap-table.js"  th:src="@{/js/bstable/js/bootstrap-table.js}"></script>
+<script src="../static/js/bstable/js/bootstrap-table-zh-CN.min.js" th:src="@{/js/bstable/js/bootstrap-table-zh-CN.min.js}"></script>
+
+<script src="../static/js/date/js/laydate.js"  th:src="@{/js/date/js/laydate.js}"></script>
+
+<script src="../static/myjs/approval-staySchool.js" th:src="@{/myjs/approval-staySchool.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bedroom.dao.AffairLateBackDao">
+	<!-- #判断用户登录账号密码是否正确;并返回用户结果集 -->
+	<insert id="apply"  parameterType="AffairLateBack">
+		insert into affair_late_back
+		(
+			stu_account,
+			back_time,
+			apply_reason,
+			affair_status,
+			apply_time
+		)	
+		values(
+			#{stuAccount},
+			#{backTime},
+			#{applyReason},
+			'0',
+			now()
+		)
+	</insert>
+	
+	<select id="getHistoryList" resultType="AffairLateBack"  parameterType="String">
+		select * from affair_late_back  
+			<where>
+				stu_account=#{stuAccount}
+			</where>
+	</select>
+	
+	<delete id="delete">
+		delete from affair_late_back
+		<where>
+			affair_id = #{affairId} 
+		</where>
+		
+	</delete>
+	<select id="getAllBackLateToReply" parameterType="String" resultType="AffairLateBack">
+		SELECT b.*,u.user_name stu_name FROM affair_late_back b 
+		left join user u on b.stu_account = u.user_account
+		left join bedroom bed  on bed.bedroom_id = u.bedroom_id 
+		left join building bu on bu.building_id = bed.building_id
+		<where> bu.building_id in (select building_id from building_manager
+			where building_manager.manager_account = #{userAccount}) 
+		</where>
+	</select>
+	<update id="replyBackLate">
+		update affair_late_back
+		<set>
+			reply_reason = #{replyReason},affair_status = #{affairStatus},reply_time=now()
+		</set>
+		<where>
+			affair_id = #{affairId}
+		</where>
+	</update>
+</mapper>

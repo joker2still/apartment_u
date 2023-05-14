@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bedroom.dao.UserDao">
+	
+	<!-- #判断用户登录账号密码是否正确;并返回用户结果集 -->
+	<select id="userLoginShowUserInfo"  resultType="User">
+		select * from user where user_account=#{userName} and user_password=#{user_password}	
+	</select>
+	
+	<!-- #修改用户个人信息 -->
+	<update id="updateUserInfo"  parameterType="User">
+		update user set  user_name=#{userName},user_password=#{userPassword},user_nickname=#{userNickname},user_sex=#{userSex},user_age=#{userAge},user_phone=#{userPhone},user_college_name=#{userCollegeName}    
+		      where user_account=#{userAccount}	
+	</update>
+	
+	<!-- 根据用户id值查询用户信息 -->
+	<select id="showUserInfoByUserAccount"  parameterType="String"  resultType="User">
+		 select * from user where user_account=#{userAccount}
+	</select>
+	
+	
+	<!-- 查询所有学院信息 -->
+	<select id="showAllCollegeName"  resultType="College">
+		select * from college
+	</select>
+	
+</mapper>

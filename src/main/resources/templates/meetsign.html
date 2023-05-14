@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link th:href="@{/css/mycss/meetfind.css}" href="../static/css/mycss/meetfind.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" href="../static/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel">寝室晚归审核</h4>
+		            </div>
+		            <div class="modal-body" id="reply-body-div">
+						<div class="reply-body-row">
+							申请单号
+							<input name="affairId" disabled="disabled"></input>
+						</div>
+						<div class="reply-body-row">
+							学生姓名
+							<input name="name" disabled="disabled"></input>
+							学生账号
+							<input name="stuAccount" disabled="disabled"></input>
+						</div>
+						<div class="reply-body-row">
+							申请时间
+							<input type="datetime-local" name="applyTime" disabled="disabled"></input>
+							晚归时间
+							<input type="datetime-local" name="backTime" disabled="disabled"></input>
+						</div>
+						<div class="reply-body-row">
+							申请原因
+							<textarea name="applyReason" disabled="disabled"></textarea>
+						</div>
+						<div class="reply-body-row">
+							审核意见
+							<textarea name="replyReason"></textarea>
+						</div>
+						<div class="reply-body-row">
+							审核状态
+							<select name="affairStatus">
+								<option value="0">待审核</option>
+								<option value="1">审核通过</option>
+								<option value="2">审核拒绝</option>
+							</select>
+						</div>
+					</div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		                <button type="button" onclick="replyAffairSubmit()" class="btn btn-primary">提交审核</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+	</div>
+	<div class="div_find">
+		<div id="all-to-reply">
+			<div id="all-to-reply-title">待审核</div>
+			<table id="all-to-reply-table">
+				<thead>
+					<tr>
+						<th>申请单号</th>
+						<th>申请账号</th>
+						<th>学生姓名</th>
+						<th>晚归时间</th>
+						<th>申请时间</th>
+						<th>回复时间</th>
+						<th>审核状态</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<script src="../static/js/jquery/jQuery-2.2.0.min.js" th:src="@{/js/jquery/jQuery-2.2.0.min.js}"></script>
+<script th:src="@{/js/query/jquery.dataTables.min.js}" src="../static/js/query/jquery.dataTables.min.js"></script>
+<script th:src="@{/myjs/bootstrap.min.js}" src="../static/myjs/bootstrap.min.js"></script>
+<script src="../static/myjs/datetime-common.js" th:src="@{/myjs/datetime-common.js}"></script>
+<script src="../static/myjs/meetsign.js" th:src="@{/myjs/meetsign.js}"></script>
+</body>
+</html>
