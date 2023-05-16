@@ -28,7 +28,7 @@
 
 1. 克隆仓库到本地：
 
-   ```git clone https://github.com/joker2still/apartment_u.git
+    ```git clone https://github.com/joker2still/apartment_u.git```
    
 2. 创建MySQL数据库，将项目中的bedroom_manage.sql文件导入到新建的数据库中。
 
@@ -36,20 +36,19 @@
 
 4. 使用Maven构建项目：
    
-   ```mvn clean install
+   ```mvn clean install```
 
 5. 运行项目：
    
-   ```java -jar target/bedroom_manage-0.0.1-SNAPSHOT.jar
+   ```java -jar target/bedroom_manage-0.0.1-SNAPSHOT.jar```
 
 6. 打开浏览器，访问http://localhost:8070，开始使用学生公寓管理系统。
 
 ## 开发计划
-
 我们计划在未来的版本中添加以下功能：
 
-- 学生住宿申请与审批流程
-- 更丰富的统计报表功能
-- 移动端适配和优化
+学生住宿申请与审批流程
+更丰富的统计报表功能
+移动端适配和优化
 
 ### 感谢所有对该项目做出贡献的开发者！
